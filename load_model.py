@@ -121,6 +121,12 @@ def load(model_id: str = MODEL_ID, device: str | None = None) -> Translator:
 
 
 if __name__ == "__main__":
+    import sys
+
+    # A Windows console defaults to a codepage that cannot represent Arabic
+    # script, so printing a translation would raise UnicodeEncodeError.
+    sys.stdout.reconfigure(encoding="utf-8")
+
     translator = load()
     print(f"loaded {MODEL_ID} on {translator.device}")
     for sentence in ["The sun rises in the east.", "My brother is a teacher."]:

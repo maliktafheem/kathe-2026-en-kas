@@ -6,8 +6,13 @@
 from __future__ import annotations
 
 import argparse
+import sys
 
 from load_model import MODEL_ID, load
+
+# A Windows console defaults to a codepage that cannot represent Arabic script,
+# so printing the translation would raise UnicodeEncodeError.
+sys.stdout.reconfigure(encoding="utf-8")
 
 
 def main() -> None:
