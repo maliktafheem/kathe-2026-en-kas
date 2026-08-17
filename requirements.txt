@@ -1,0 +1,8 @@
+# transformers must stay on 4.51.x. Version 5 removed
+# `tokenizer.as_target_tokenizer()`, which IndicTrans2 needs to decode output
+# ids in target-vocabulary space.
+transformers==4.51.3
+IndicTransToolkit==1.1.1
+torch>=2.1
+sentencepiece>=0.2.0
+safetensors>=0.4.0

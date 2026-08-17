@@ -1,0 +1,8 @@
+# The weights live on the Hugging Face Hub, not in git.
+hf-model/
+*.safetensors
+predictions.csv
+
+__pycache__/
+*.py[cod]
+.venv/
